@@ -16,6 +16,27 @@
     <Filter Include="头文件\Generate">
       <UniqueIdentifier>{b42916bc-86bc-43df-af94-7e5e6df40fcf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Generate\solver">
+      <UniqueIdentifier>{200ae7e1-dcad-4ba2-8813-eb8dde73a474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Generate\mazes">
+      <UniqueIdentifier>{9b3c0d8e-1786-4614-bc39-0919ad3c5581}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Generate\mazes\kruskal">
+      <UniqueIdentifier>{bd833ad6-5262-4945-81ec-2bbb7affb3f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Generate\mazes\maze_generator">
+      <UniqueIdentifier>{499ca9dd-92d4-474e-95c8-fc48788854df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Generate\mazes\prim">
+      <UniqueIdentifier>{99453c06-eefb-4ef6-9851-d16466eb2fcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Generate\mazes\recursive_backtracking">
+      <UniqueIdentifier>{8cb55820-5d5a-45a6-bde5-fa86c90a56da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Generate\mazes\recursive_division">
+      <UniqueIdentifier>{f08f8a6a-3d9e-404f-b01d-951398cd0ad4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Rectangle.h">
@@ -30,8 +51,26 @@
     <ClInclude Include="MainWindow.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Generate.h">
+      <Filter>头文件\Generate</Filter>
+    </ClInclude>
+    <ClInclude Include="BFS.h">
+      <Filter>头文件\Generate\solver</Filter>
+    </ClInclude>
+    <ClInclude Include="DFS.h">
+      <Filter>头文件\Generate\solver</Filter>
+    </ClInclude>
+    <ClInclude Include="kruskal.h">
+      <Filter>头文件\Generate\mazes\kruskal</Filter>
+    </ClInclude>
+    <ClInclude Include="maze_generator.h">
+      <Filter>头文件\Generate\mazes\maze_generator</Filter>
+    </ClInclude>
+    <ClInclude Include="recursive_division.h">
+      <Filter>头文件\Generate\mazes\recursive_division</Filter>
+    </ClInclude>
     <ClInclude Include="prim.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\Generate\mazes\prim</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +79,30 @@
     </ClCompile>
     <ClCompile Include="Window.h">
       <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BFS.cpp">
+      <Filter>头文件\Generate\solver</Filter>
+    </ClCompile>
+    <ClCompile Include="DFS.cpp">
+      <Filter>头文件\Generate\solver</Filter>
+    </ClCompile>
+    <ClCompile Include="kruskal.cpp">
+      <Filter>头文件\Generate\mazes\kruskal</Filter>
+    </ClCompile>
+    <ClCompile Include="maze_generator.cpp">
+      <Filter>头文件\Generate\mazes\maze_generator</Filter>
+    </ClCompile>
+    <ClCompile Include="prim.cpp">
+      <Filter>头文件\Generate\mazes\prim</Filter>
+    </ClCompile>
+    <ClCompile Include="recursive_backtracking.cpp">
+      <Filter>头文件\Generate\mazes\recursive_backtracking</Filter>
+    </ClCompile>
+    <ClCompile Include="recursive_backtracking.h">
+      <Filter>头文件\Generate\mazes\recursive_backtracking</Filter>
+    </ClCompile>
+    <ClCompile Include="recursive_division.cpp">
+      <Filter>头文件\Generate\mazes\recursive_division</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

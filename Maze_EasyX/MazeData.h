@@ -61,13 +61,11 @@ public:
 	std::vector<std::vector<int>> getMazeMatrix() {
 		return this->maze;
 	}
-	void prim() {
-
-		Cell start(this->start_r, this->start_c);
-		Cell end(this->end_r, this->end_c);
-		//std::vector<std::vector<int>> maze;
-		generateMaze(this->maze, rows, cols, start, end);
-
+	std::pair<int, int> getStart() {
+		return std::pair<int, int>(this->start_r, this->start_c);
+	}
+	std::pair<int, int> getEnd() {
+		return std::pair<int, int>(this->end_r, this->end_c);
 	}
 private:
 	/*int** maze;*/

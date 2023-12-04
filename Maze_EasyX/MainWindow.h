@@ -9,7 +9,7 @@ public:
 
 		//circle(200, 200, 100);	// »­Ô²£¬Ô²ÐÄ(200, 200)£¬°ë¾¶ 100
 		solidrectangle(0, 0, 1280, 720);
-		setfillcolor(green);
-		solidrectangle(0, 0, 720, 720);
+		//setfillcolor(green);
+		//solidrectangle(0, 0, 720, 720);
 	}
 };

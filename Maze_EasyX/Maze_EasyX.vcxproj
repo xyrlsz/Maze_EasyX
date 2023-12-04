@@ -19,14 +19,28 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BFS.h" />
+    <ClInclude Include="DFS.h" />
+    <ClInclude Include="Generate.h" />
+    <ClInclude Include="kruskal.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="MazeData.h" />
-    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="maze_generator.h" />
     <ClInclude Include="prim.h" />
+    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="recursive_division.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BFS.cpp" />
+    <ClCompile Include="DFS.cpp" />
+    <ClCompile Include="recursive_backtracking.h" />
+    <ClCompile Include="recursive_backtracking.cpp" />
+    <ClCompile Include="kruskal.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="maze_generator.cpp" />
+    <ClCompile Include="prim.cpp" />
+    <ClCompile Include="recursive_division.cpp" />
     <ClCompile Include="Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

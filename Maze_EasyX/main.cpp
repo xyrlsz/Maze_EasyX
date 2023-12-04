@@ -5,7 +5,7 @@
 #include<vector>
 #include"Maze.h"
 #include"MainWindow.h"
-
+#include"Generate.h"
 class MazeData;
 
 
@@ -32,15 +32,18 @@ int main() {
 	//		convertedData[i][j] = mazeData[i][j];
 	//	}
 	//}
+
+	
 	std::vector<std::vector<int>>convertedData(10, std::vector<int>(10, 0));
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 10; j++) {
 			convertedData[i][j] = mazeData[i][j];
 		}
 	}
-
-
-	MazeData* mazeDataObject = new MazeData(convertedData);
+	MazeGenerator mazeGene;
+	
+	std::vector<std::vector<int>> tmp = mazeGene.prim(100, 100, 0, 0, 99, 99);
+	MazeData* mazeDataObject = new MazeData(tmp, 0, 0, 99, 99);
 	Maze* maze = new Maze(0, 0, 720, 720, mazeDataObject);
 	/*drawMaze(maze, BLACK, WHITE);*/
 	maze->draw(BLACK, WHITE);

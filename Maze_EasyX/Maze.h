@@ -21,20 +21,25 @@ public:
 	MazeData* getMazeData() {
 		return this->mazeData;
 	}
-	uint32_t getRows() {
+	int getRows() {
 		return this->mazeData->getRows();
 	}
-	uint32_t getCols() {
+	int getCols() {
 		return this->mazeData->getCols();
 	}
 	int getCellSize() {
 		return this->cellSize;
 	}
+
 	void draw(COLORREF wall, COLORREF path) {
 		int mazeRows = this->getRows();
 		int mazeCols = this->getCols();
 		int x = this->getLeft();
 		int y = this->getTop();
+		//ÏÈ»­Ò»¸ö±³¾°
+		//setfillcolor(path);
+		//solidrectangle(this->getLeft(), this->getTop(), this->getRight(), this->getBottom());
+
 		int cellSize = this->getCellSize();
 		for (int i = 0; i < mazeRows; ++i) {
 			for (int j = 0; j < mazeCols; ++j) {
@@ -50,6 +55,8 @@ public:
 				}
 			}
 		}
+
+
 	}
 private:
 	MazeData* mazeData;
