@@ -15,7 +15,7 @@ namespace maze
     public:
         maze_generator(int height, int width) {
 
-            std::vector < std::vector<int>>tmp(height,std::vector<int>(width,0));
+            std::vector < std::vector<int>>tmp(height,std::vector<int>(width, wall));
             this->area = tmp;
         }
 

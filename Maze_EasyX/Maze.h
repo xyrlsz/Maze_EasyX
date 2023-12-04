@@ -44,7 +44,7 @@ public:
 		for (int i = 0; i < mazeRows; ++i) {
 			for (int j = 0; j < mazeCols; ++j) {
 				// »­Ç½
-				if (this->getMazeData()->getMazeMatrix()[i][j] == 1) {
+				if (this->getMazeData()->getMazeMatrix()[i][j] == 0) {
 					setfillcolor(wall);
 					solidrectangle(x + j * cellSize, y + i * cellSize, x + (j + 1) * cellSize, y + (i + 1) * cellSize);
 				}

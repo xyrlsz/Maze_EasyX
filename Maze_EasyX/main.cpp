@@ -8,7 +8,14 @@
 #include"Generate.h"
 class MazeData;
 
-
+void print_vector_matrix(std::vector<std::vector<int>> matrix) {
+	for (int i = 0; i < matrix.size(); i++) {
+		for (int j = 0; j < matrix[0].size(); j++) {
+			std::cout << matrix[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+}
 int main() {
 	MainWindow* mainWindow = new MainWindow();
 	mainWindow->show();
@@ -42,7 +49,11 @@ int main() {
 	}
 	MazeGenerator mazeGene;
 	
-	std::vector<std::vector<int>> tmp = mazeGene.prim(100, 100, 0, 0, 99, 99);
+	std::vector<std::vector<int>> tmp = mazeGene.prim(100, 100, 1, 1, 77, 77);
+	//tmp = mazeGene.Kruskal(100, 100, 55, 55, 66, 66);
+	//tmp = mazeGene.recursive_division(100, 100, 55, 55, 66, 66);
+	//tmp = mazeGene.recBack(100, 100, 55, 55, 66, 66);
+	//print_vector_matrix(tmp);
 	MazeData* mazeDataObject = new MazeData(tmp, 0, 0, 99, 99);
 	Maze* maze = new Maze(0, 0, 720, 720, mazeDataObject);
 	/*drawMaze(maze, BLACK, WHITE);*/
