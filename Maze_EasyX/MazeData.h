@@ -1,7 +1,7 @@
 #include <cstddef>
 #include <vector>
 
-struct Cell;
+#include"prim.h"
 class MazeData {
 public:
 	MazeData() {
@@ -12,7 +12,7 @@ public:
 		this->end_r = 0;
 		this->end_c = 0;
 	}
-	MazeData(uint32_t rows, uint32_t cols) {
+	MazeData(int rows, int cols) {
 		this->cols = cols;
 		this->rows = rows;
 		std::vector<std::vector<int>> maze(rows, std::vector<int>(cols, 0));
@@ -22,8 +22,8 @@ public:
 		this->end_r = rows - 1;
 		this->end_c = cols - 1;
 	}
-	MazeData(uint32_t rows, uint32_t cols, uint32_t start_r,
-		uint32_t start_c, uint32_t end_r, uint32_t end_c) {
+	MazeData(int rows, int cols, int start_r,
+		int start_c, int end_r, int end_c) {
 		this->cols = cols;
 		this->rows = rows;
 		this->start_r = start_r;
@@ -34,18 +34,18 @@ public:
 	}
 	MazeData(std::vector<std::vector<int>> maze) {
 		this->maze = maze;
-		this->cols = uint32_t(maze[0].size());
-		this->rows = uint32_t(maze.size());
+		this->cols = int(maze[0].size());
+		this->rows = int(maze.size());
 		this->start_r = 0;
 		this->start_c = 0;
 		this->end_r = rows - 1;
 		this->end_c = cols - 1;
 	}
-	MazeData(std::vector<std::vector<int>> maze, uint32_t start_r,
-		uint32_t start_c, uint32_t end_r, uint32_t end_c) {
+	MazeData(std::vector<std::vector<int>> maze, int start_r,
+		int start_c, int end_r, int end_c) {
 		this->maze = maze;
-		this->cols = uint32_t(maze[0].size());
-		this->rows = uint32_t(maze.size());
+		this->cols = int(maze[0].size());
+		this->rows = int(maze.size());
 		this->start_r = start_r;
 		this->start_c = start_c;
 		this->end_r = end_r;
@@ -61,16 +61,23 @@ public:
 	std::vector<std::vector<int>> getMazeMatrix() {
 		return this->maze;
 	}
+	void prim() {
 
+		Cell start(this->start_r, this->start_c);
+		Cell end(this->end_r, this->end_c);
+		//std::vector<std::vector<int>> maze;
+		generateMaze(this->maze, rows, cols, start, end);
+
+	}
 private:
 	/*int** maze;*/
 	std::vector<std::vector<int>> maze;
 	int rows;
 	int cols;
-	uint32_t start_r;
-	uint32_t start_c;
-	uint32_t end_r;
-	uint32_t end_c;
+	int start_r;
+	int start_c;
+	int end_r;
+	int end_c;
 };
 
 

@@ -23,6 +23,7 @@
     <ClInclude Include="Maze.h" />
     <ClInclude Include="MazeData.h" />
     <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="prim.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
