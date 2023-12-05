@@ -4,6 +4,7 @@
 #include"prim.h"
 class MazeData {
 public:
+	
 	MazeData() {
 		this->cols = 0;
 		this->rows = 0;
@@ -76,6 +77,8 @@ private:
 	int start_c;
 	int end_r;
 	int end_c;
+protected:
+	
 };
 
 

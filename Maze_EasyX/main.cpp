@@ -6,6 +6,10 @@
 #include"Maze.h"
 #include"MainWindow.h"
 #include"Generate.h"
+#include"BFS.h"
+#include "DFS.h"
+#include "DFS.h"
+#include <windows.h>
 class MazeData;
 
 void print_vector_matrix(std::vector<std::vector<int>> matrix) {
@@ -49,16 +53,24 @@ int main() {
 	}
 	MazeGenerator mazeGene;
 	
-	std::vector<std::vector<int>> tmp = mazeGene.prim(100, 100, 1, 1, 77, 77);
-	//tmp = mazeGene.Kruskal(100, 100, 55, 55, 66, 66);
-	//tmp = mazeGene.recursive_division(100, 100, 55, 55, 66, 66);
-	//tmp = mazeGene.recBack(100, 100, 55, 55, 66, 66);
+	std::vector<std::vector<int>> tmp;
+	//tmp= mazeGene.prim(99, 99, 0, 1, 98, 97);
+	//tmp = mazeGene.Kruskal(99, 99, 0, 1, 98, 97);
+	tmp = mazeGene.recursive_division(19,19, 0, 1, 18, 17);;
+	//tmp = mazeGene.recBack(99, 99, 0, 1, 98, 97);
 	//print_vector_matrix(tmp);
-	MazeData* mazeDataObject = new MazeData(tmp, 0, 0, 99, 99);
+
+	MazeData* mazeDataObject = new MazeData(tmp);
 	Maze* maze = new Maze(0, 0, 720, 720, mazeDataObject);
 	/*drawMaze(maze, BLACK, WHITE);*/
 	maze->draw(BLACK, WHITE);
+	std::queue<std::pair<int, int>> q = DFS(tmp, 0, 1, 18, 17);
+	maze->drawPath(q);
+	//maze->draw(BLACK, WHITE);
+	print_vector_matrix(tmp);
 	_getch();				// 按任意键继续
 	closegraph();			// 关闭绘图窗口
 	return 0;
 }
+
+

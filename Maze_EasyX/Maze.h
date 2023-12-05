@@ -3,9 +3,11 @@
 #include"MazeData.h"
 #include <graphics.h>
 #include <conio.h>
-
+#include <queue>
+#include <windows.h>
 class Maze : public Rectangle {
 public:
+	
 	Maze() {
 		Rectangle::Rectangle();
 		this->mazeData = new MazeData();
@@ -30,7 +32,32 @@ public:
 	int getCellSize() {
 		return this->cellSize;
 	}
+	void drawPath(std::queue<std::pair<int,int>> q) {
+		int mazeRows = this->getRows();
+		int mazeCols = this->getCols();
+		int x = this->getLeft();
+		int y = this->getTop();
+		COLORREF color = GREEN;
+		std::vector<std::vector<bool>> hash(mazeRows, std::vector<bool>(mazeCols, false));
+		while (!q.empty()) {
+			std::pair<int, int> coordinate = q.front();
+			//if (hash[coordinate.first][coordinate.second] == false) {
+			//	color = GREEN;
+			//	hash[coordinate.first][coordinate.second] = true;
+			//}
+			//else
+			//{
+			//	color = WHITE;
+			//	hash[coordinate.first][coordinate.second] = false;
+			//}
+			setfillcolor(color);
+			solidrectangle(x + coordinate.second * cellSize, y + coordinate.first * cellSize, x + (coordinate.second + 1) * cellSize, y + (coordinate.first + 1) * cellSize);
+			q.pop();
+			Sleep(500);
+		}
 
+		
+	}
 	void draw(COLORREF wall, COLORREF path) {
 		int mazeRows = this->getRows();
 		int mazeCols = this->getCols();
@@ -54,6 +81,8 @@ public:
 					solidrectangle(x + j * cellSize, y + i * cellSize, x + (j + 1) * cellSize, y + (i + 1) * cellSize);
 				}
 			}
+			/*Sleep(200);*/
+
 		}
 
 
